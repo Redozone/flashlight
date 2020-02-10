@@ -95,7 +95,10 @@ void MainWindow::readCommand()
     switch (command.type()) {
     case TLVcommand::ON:{
         QColor color = command.color();
-        ui->lanternLabel->setStyleSheet(QString("background: %1").arg(color.name()));
+        ui->lanternLabel->setStyleSheet(QString("background: %1"
+                                                " border-radius: 100px;"
+                                                " min-height: 20px;"
+                                                " min-width: 20px;").arg(color.name()));
         break;
     }
     case TLVcommand::OFF:{
@@ -116,12 +119,18 @@ void MainWindow::readCommand()
             QColor color;
             color.setNamedColor(QString("#") + value.toHex());
             command.setColor(color);
-            ui->lanternLabel->setStyleSheet(QString("background: %1").arg(color.name()));
+            ui->lanternLabel->setStyleSheet(QString("background: %1; "
+                                                    " border-radius: 100px;"
+                                                    " min-height: 20px;"
+                                                    " min-width: 20px;").arg(color.name()));
         }
         break;
     }
     default:
-        ui->lanternLabel->setStyleSheet("background-color: rgb(0,0,0);");
+        ui->lanternLabel->setStyleSheet("background-color: rgb(0,0,0);"
+                                        " border-radius: 100px;"
+                                        " min-height: 20px;"
+                                        " min-width: 20px;");
         break;
     }
 
