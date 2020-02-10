@@ -1,0 +1,12 @@
+#Qt Creator
+*.pro.user*
+moc_*.*
+*.o
+/build-*
+/build/
+/bin/
+/src/lang/*.qm
+Makefile
+Makefile.Debug
+Makefile.Release
+.qmake.stash
